@@ -107,14 +107,14 @@ public class ForgingLeveler extends SkillLeveler implements Listener {
 		int totalLevel = 0;
 		if (item != null) {
 			for (Map.Entry<Enchantment, Integer> entry : item.getEnchantments().entrySet()) {
-				if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE)) {
+				if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE) && !entry.getKey().isCursed()) {
 					totalLevel += entry.getValue();
 				}
 			}
 			if (item.getItemMeta() instanceof EnchantmentStorageMeta) {
 				EnchantmentStorageMeta esm = (EnchantmentStorageMeta) item.getItemMeta();
 				for (Map.Entry<Enchantment, Integer> entry : esm.getStoredEnchants().entrySet()) {
-					if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE)) {
+					if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE) && !entry.getKey().isCursed()) {
 						totalLevel += entry.getValue();
 					}
 				}

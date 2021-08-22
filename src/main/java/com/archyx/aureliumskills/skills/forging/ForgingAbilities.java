@@ -67,14 +67,14 @@ public class ForgingAbilities extends AbilityProvider implements Listener {
                     // Add enchants to disenchant
                     if (first != null) {
                         for (Map.Entry<Enchantment, Integer> entry : first.getEnchantments().entrySet()) {
-                            if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE)) {
+                            if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE) && !entry.getKey().isCursed()) {
                                 enchants.add(new EnchantmentValue(entry.getKey(), entry.getValue()));
                             }
                         }
                     }
                     if (second != null) {
                         for (Map.Entry<Enchantment, Integer> entry : second.getEnchantments().entrySet()) {
-                            if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE)) {
+                            if (!entry.getKey().equals(Enchantment.BINDING_CURSE) && !entry.getKey().equals(Enchantment.VANISHING_CURSE) && !entry.getKey().isCursed()) {
                                 enchants.add(new EnchantmentValue(entry.getKey(), entry.getValue()));
                             }
                         }
